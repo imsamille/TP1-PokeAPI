@@ -15,11 +15,13 @@ Por se tratar de uma tarefa predominantemente **I/O-bound** (limitada pela latê
 - **Linguagem:** Python 3.14
 - **Bibliotecas:** `requests`, `os`, `threading`, `multiprocessing` e `concurrent.futures`.
 - **Hardware de Teste:** Samsung Galaxy Book 4 (10 núcleos físicos / 12 lógicos).
-
+  
 ## 📂 Estrutura do Repositório
-- `main.py`: Código-fonte com todas as implementações e testes de performance.
-- `requirements.txt`: Arquivo de dependências (necessário para instalar a biblioteca `requests`).
-- `Relatorio_PokeAPI_Raphaela.pdf`: Relatório técnico completo (formato SBC) contendo a metodologia detalhada, tabelas de resultados e discussão acadêmica.
+- `scripts_paralelos/`: Pasta contendo as implementações de cada método de concorrência.
+- `TP1_PokéAPI_Relatório.pdf`: Relatório técnico final com toda a análise dos testes.
+- `main.py`: Script principal que executa os experimentos e gera os resultados.
+- `requirements.txt`: Arquivo com as dependências necessárias (`requests`).
+- `utils.py`: Funções auxiliares de limpeza e gerenciamento de pastas.
 
 ## 🚀 Como Executar
 
@@ -32,3 +34,9 @@ pip install -r requirements.txt
 ```bash
 python main.py
 ```
+---
+
+### ⚠️ Observação Importante
+Devido à carga dos experimentos (testes com 100, 500 e 1.000 imagens, com 10 repetições para cada variação de 2, 4 e 8 workers), a execução completa do script `main.py` é **extremamente demorada**. O processo pode levar várias horas para concluir todas as iterações, dependendo da latência da rede e do hardware. 
+
+Para detalhes sobre os resultados e médias obtidas, consulte o arquivo PDF do relatório incluído na raiz deste repositório.
